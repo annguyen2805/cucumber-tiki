@@ -1,6 +1,7 @@
 package PageUI;
 
 public class ProductPageUI {
+	
 	public static final String TEXT_TITTLE="//h1[@class='title']";
 	public static final String SIZE_PRODUCT_TEXTBOX="//input[@class='input']";
 	public static final String ADD_TO_CART_BUTTON="//button[@class='btn btn-add-to-cart']";
