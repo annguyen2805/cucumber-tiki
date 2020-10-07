@@ -4,7 +4,6 @@ Feature: Purchase
 	I want to find product information and Purchase
 	
 	Scenario: Purchase of tiki
-		Given I open application
 		When I input to search textbox with "apple"
 		And I click to search button
 		And I click to Tiki Now

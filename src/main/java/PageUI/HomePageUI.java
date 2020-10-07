@@ -8,8 +8,7 @@ public class HomePageUI {
 	public static final String CITY_DROPDOWN="//label[text()='Tỉnh/ Thành phố']//parent::div//select";
 	public static final String DISTRICT_DROPDOWN="//label[text()='Quận/ Huyện']//parent::div//select";
 	public static final String WARD_DROPDOWN="//label[text()='Phường/ Xã']//parent::div//select";
-	public static final String CONFIRM_ADDRESS_DROPDOWN="//button[text()='GIAO ĐẾN ĐỊA CHỈ NÀY']";
-	
-	
+	public static final String CONFIRM_ADDRESS="//button[text()='GIAO ĐẾN ĐỊA CHỈ NÀY']";
+	public static final String PRODUCT_CHOSSE="//div[@class='product-box-list']/div[5]";
 	
 }
