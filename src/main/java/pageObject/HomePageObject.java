@@ -1,63 +1,64 @@
-package stepDefinitions;
+package pageObject;
 
 import org.openqa.selenium.WebDriver;
 
-import PageUI.HomePageUI;
 import commons.AbtractPage;
+import pageUI.HomePageUI;
 
-import cucumber.api.java.en.When;
-import cucumberOption.Hooks;
+public class HomePageObject extends AbtractPage {
 
-public class homePageSteps extends AbtractPage {
 	WebDriver driver;
 	
-	public homePageSteps() {
-		this.driver = Hooks.openAndQuitBrowser();
+
+	public HomePageObject(WebDriver driver) {
+		this.driver = driver;
 	}
-	public static String nameProduct;
-	
-	@When("^I input to search textbox with \"([^\"]*)\"$")
-	public void iInputToSearchTextboxWith(String value) {
+
+	public void cancelPopup() {
+		waitForElementClickable(driver, HomePageUI.CANCEL_POPUP);
+		clickToElement(driver, HomePageUI.CANCEL_POPUP);
+	}
+	public void inputToSearchTextbox(String value) {
 		waitForElementVisble(driver, HomePageUI.SEARCH_TEXTBOX);
 		sendkeyToElement(driver, HomePageUI.SEARCH_TEXTBOX, value);
 	}
-
-	@When("^I click to search button$")
-	public void iClickToSearchButton() {
+	public void clickToSearchButton() {
 		waitForElementClickable(driver, HomePageUI.SEARCH_BUTTON);
 		clickToElement(driver, HomePageUI.SEARCH_BUTTON);
 	}
 
-	@When("^I click to Tiki Now$")
-	public void iClickToTikiNow() {
-		waitForElementClickable(driver, HomePageUI.SEARCH_BUTTON);
-		clickToElement(driver, HomePageUI.SEARCH_BUTTON);
-		
+	public void clickToTikiNowCheckbox() {
+		waitForElementClickable(driver, HomePageUI.TIKI_NOW_CHECKBOX);
+		clickToElement(driver, HomePageUI.TIKI_NOW_CHECKBOX);
+	}
+
+	public void handelPopupAddress() {
 		waitForElementClickable(driver, HomePageUI.CONFIRM_BUTTON);
 		clickToElement(driver, HomePageUI.CONFIRM_BUTTON);
-		
+
 		waitForElementVisble(driver, HomePageUI.CITY_DROPDOWN);
 		selectItemIDropdown(driver, HomePageUI.CITY_DROPDOWN, "Hà Nội");
-		
+
 		waitForElementVisble(driver, HomePageUI.DISTRICT_DROPDOWN);
 		selectItemIDropdown(driver, HomePageUI.DISTRICT_DROPDOWN, "Quận Hoàn Kiếm");
-		
+
 		waitForElementVisble(driver, HomePageUI.WARD_DROPDOWN);
 		selectItemIDropdown(driver, HomePageUI.WARD_DROPDOWN, "Phường Cửa Nam");
-		
+
 		waitForElementClickable(driver, HomePageUI.CONFIRM_ADDRESS);
 		clickToElement(driver, HomePageUI.CONFIRM_ADDRESS);
-		
 	}
 
-	@When("^I select the (\\d+)th product$")
-	public void iSelectTheThProduct(int arg1) {
-		waitForElementVisble(driver, HomePageUI.PRODUCT_CHOSSE);
-		nameProduct= getAttributeValue(driver, HomePageUI.PRODUCT_CHOSSE, "data-title");
+	public String getTitleProduct() {
+		waitForElementVisble(driver, HomePageUI.GET_TITLE_PRODUCT);
+		return getAttributeValue(driver, HomePageUI.GET_TITLE_PRODUCT, "data-title");
+	}
+
+	public void chooseProduct() {
 		
 		waitForElementClickable(driver, HomePageUI.PRODUCT_CHOSSE);
+		scrollToElement(driver, HomePageUI.PRODUCT_CHOSSE);
 		clickToElement(driver, HomePageUI.PRODUCT_CHOSSE);
 	}
 
-	
 }

@@ -12,6 +12,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.Sleeper;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 
@@ -346,6 +347,15 @@ public abstract class AbtractPage {
 	public void waitForElementClickable(WebDriver driver, String xpathValue,String... values) {
 		explicitWait = new WebDriverWait(driver, longTimeOut);
 		explicitWait.until(ExpectedConditions.elementToBeClickable(byXpath(getLocatorDynamic(xpathValue, values))));
+	}
+	
+	public void sleepInSecond(int time) {
+		try {
+			Thread.sleep(time*1000);
+		} catch (InterruptedException e) {
+			
+			e.printStackTrace();
+		}
 	}
 
 	

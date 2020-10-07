@@ -1,4 +1,4 @@
-package PageUI;
+package pageUI;
 
 public class ProductPageUI {
 	
@@ -8,4 +8,6 @@ public class ProductPageUI {
 	public static final String CART_BUTTON="//span[text()='Giỏ hàng']//parent::div";
 	public static final String PRICE_TEXT="//p[@class='cart-products__real-prices']";
 	public static final String TOTAL_PRICE="//span[@class='prices__value prices__value--final']";	
+	public static final String SIZE_PRODUCT="//input[@value='2']";
 }
+
