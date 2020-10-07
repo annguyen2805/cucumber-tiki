@@ -15,29 +15,26 @@ public class ProductPageObject extends AbtractPage {
 	}
 	HomePageObject homePage;
 	public void verifyInformationProduct(String title) {
-		waitForElementVisble(driver, ProductPageUI.TEXT_TITTLE);
-		System.out.println(title);
-		System.out.println(getTextElement(driver, ProductPageUI.TEXT_TITTLE));
-		
+		waitForElementVisble(driver, ProductPageUI.TEXT_TITTLE);		
 		if (title.equals(getTextElement(driver, ProductPageUI.TEXT_TITTLE))) {
-			sleepInSecond(2);
+			sleepInSecond(1);
 			waitForElementVisble(driver, ProductPageUI.SIZE_PRODUCT_TEXTBOX);
 			sendkeyToElement(driver, ProductPageUI.SIZE_PRODUCT_TEXTBOX, "2");
 			sendKeyboardToElement(driver, ProductPageUI.SIZE_PRODUCT_TEXTBOX, Keys.TAB);
-			sleepInSecond(2);
+			sleepInSecond(1);
 			
 			waitForElementClickable(driver, ProductPageUI.ADD_TO_CART_BUTTON);
 			clickToElement(driver, ProductPageUI.ADD_TO_CART_BUTTON);
 			
-			sleepInSecond(2);
+			sleepInSecond(1);
 
 			waitForElementClickable(driver, ProductPageUI.CART_BUTTON);
 			clickToElement(driver, ProductPageUI.CART_BUTTON);
 			
 			waitForElementVisble(driver, ProductPageUI.SIZE_PRODUCT);
-			Assert.assertTrue(isElementDisplayed(driver,  ProductPageUI.TOTAL_PRICE));
+			Assert.assertTrue(isElementDisplayed(driver,  ProductPageUI.SIZE_PRODUCT));
 			
-			waitForElementVisble(driver, ProductPageUI.SIZE_PRODUCT);
+			waitForElementVisble(driver, ProductPageUI.TOTAL_PRICE);
 			Assert.assertTrue(isElementDisplayed(driver,  ProductPageUI.TOTAL_PRICE));
 			
 		} else {

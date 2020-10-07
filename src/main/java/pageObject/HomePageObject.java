@@ -55,10 +55,8 @@ public class HomePageObject extends AbtractPage {
 	}
 
 	public void chooseProduct() {
-		
 		waitForElementClickable(driver, HomePageUI.PRODUCT_CHOSSE);
-		scrollToElement(driver, HomePageUI.PRODUCT_CHOSSE);
-		clickToElement(driver, HomePageUI.PRODUCT_CHOSSE);
+		clickToElementByJS(driver, HomePageUI.PRODUCT_CHOSSE);
 	}
 
 }

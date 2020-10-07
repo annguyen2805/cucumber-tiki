@@ -17,7 +17,6 @@ public class HomePageSteps extends AbtractPage {
 		homePage = PageGeneratorManager.getHomepage(driver);
 	}
 	
-	
 	@When("^I input to search textbox with \"([^\"]*)\"$")
 	public void iInputToSearchTextboxWith(String value) {
 		homePage.cancelPopup();
@@ -38,7 +37,6 @@ public class HomePageSteps extends AbtractPage {
 	@When("^I select the product$")
 	public void iSelectTheProduct() {
 		nameProduct= homePage.getTitleProduct();
-		System.out.println(nameProduct);
 		homePage.chooseProduct();
 	}
 

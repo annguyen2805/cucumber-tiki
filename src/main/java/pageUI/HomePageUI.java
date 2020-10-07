@@ -10,6 +10,6 @@ public class HomePageUI {
 	public static final String WARD_DROPDOWN="//label[text()='Phường/ Xã']//parent::div//select";
 	public static final String CONFIRM_ADDRESS="//button[text()='GIAO ĐẾN ĐỊA CHỈ NÀY']";
 	public static final String GET_TITLE_PRODUCT="//div[@class='product-box-list']/div[5]";
-	public static final String PRODUCT_CHOSSE="//div[@class='product-box-list']/div[4]//img[@class='product-image img-responsive']";
+	public static final String PRODUCT_CHOSSE="//div[@class='product-box-list']/div[5]//p[@class='title']";
 	public static final String CANCEL_POPUP="//button[@id='onesignal-slidedown-cancel-button']";
 }
